@@ -1,14 +1,12 @@
 import React from 'react'
-import { render } from 'react-dom'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-import App from './modules/App'
-import About from './modules/About'
-import Repos from './modules/Repos'
-import Repo from './modules/Repo'
-import Home from './modules/Home'
+import App from './App'
+import About from './About'
+import Repos from './Repos'
+import Repo from './Repo'
+import Home from './Home'
 
-render((
-  <Router history={browserHistory}>
+module.exports = (
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>
       <Route path="/repos" component={Repos}>
@@ -16,5 +14,4 @@ render((
       </Route>
       <Route path="/about" component={About}/>
     </Route>
-  </Router>
-), document.getElementById('app'))
+)
